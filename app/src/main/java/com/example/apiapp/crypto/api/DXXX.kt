@@ -8,4 +8,5 @@ data class DXXX(
     val volume: String,
     val volume_change: String,
     val volume_change_pct: String
+
 )

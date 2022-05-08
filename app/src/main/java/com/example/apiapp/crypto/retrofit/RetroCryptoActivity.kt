@@ -1,5 +1,6 @@
 package com.example.apiapp.crypto.retrofit
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.example.apiapp.databinding.ActivityRetroCryptoBinding
+import kotlinx.android.synthetic.main.crypto_items.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.HttpException
@@ -21,6 +23,7 @@ class RetroCryptoActivity : AppCompatActivity() {
 
     private lateinit var retroCryptoAdapter: RetroCryptoAdapter
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRetroCryptoBinding.inflate(layoutInflater)
@@ -32,7 +35,9 @@ class RetroCryptoActivity : AppCompatActivity() {
             val response = try {
                 RetrofitInstance.api.getCryptos()
             } catch(e: IOException) {
+                binding.error.isVisible = true
                 Log.e(TAG, "IOException, you might not have internet connection")
+                binding.error.text = "ERROR\nIOException, you might not have internet connection"
                 binding.progressBar.isVisible = false
                 return@launchWhenCreated
             } catch (e: HttpException) {
@@ -44,14 +49,16 @@ class RetroCryptoActivity : AppCompatActivity() {
                 retroCryptoAdapter.cryptos = response.body()!!
             } else {
                 Log.e(TAG, "Response not successful")
+
             }
             binding.progressBar.isVisible = false
         }
+
+
+
     }
 
     private fun setupRecyclerView() = binding.recyclerviewCryptos.apply {
-
-
 
         retroCryptoAdapter = RetroCryptoAdapter(baseContext)
         adapter = retroCryptoAdapter

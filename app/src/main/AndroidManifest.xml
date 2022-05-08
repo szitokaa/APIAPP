@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.apiapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,10 +14,14 @@
         android:theme="@style/Theme.ApiApp">
         <activity
             android:name=".crypto.retrofit.RetroCryptoActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/retro_app_name"/>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            tools:ignore="ExtraText"
+            >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

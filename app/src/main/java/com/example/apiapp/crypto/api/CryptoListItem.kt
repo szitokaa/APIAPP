@@ -1,10 +1,16 @@
 package com.example.apiapp.crypto.api
 
+import com.google.gson.annotations.SerializedName
+
 data class CryptoListItem(
-    val `1d`: D,
-    val `30d`: DX,
-    val `365d`: DXX,
-    val `7d`: DXXX,
+    @SerializedName("1d")
+    val day: D,
+    @SerializedName("30d")
+    val month: DX,
+    @SerializedName("365d")
+    val year: DXX,
+    @SerializedName("7d")
+    val week: DXXX,
     val circulating_supply: String,
     val currency: String,
     val first_candle: String,
@@ -23,6 +29,7 @@ data class CryptoListItem(
     val num_pairs: String,
     val num_pairs_unmapped: String,
     val platform_currency: String,
+
     val price: String,
     val price_date: String,
     val price_timestamp: String,
@@ -31,4 +38,7 @@ data class CryptoListItem(
     val status: String,
     val symbol: String,
     val ytd: Ytd
+
 )
+
+

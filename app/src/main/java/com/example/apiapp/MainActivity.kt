@@ -10,6 +10,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        toCryptoButton.setOnClickListener({ startActivity(Intent(this, RetroCryptoActivity::class.java)) })
+        toRetroCryptoButton.setOnClickListener({ startActivity(Intent(this, RetroCryptoActivity::class.java)) })
     }
 }

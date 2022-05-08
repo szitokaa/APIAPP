@@ -11,30 +11,42 @@ import coil.ImageLoader
 import coil.decode.SvgDecoder
 import coil.load
 import com.example.apiapp.crypto.api.CryptoListItem
-import com.example.apiapp.crypto.api.cryptoList
 import com.example.apiapp.databinding.CryptoItemsBinding
-import kotlin.coroutines.coroutineContext
+import java.math.RoundingMode
 
-class RetroCryptoAdapter(val context: Context) : RecyclerView.Adapter<RetroCryptoAdapter.RetroCryptoHolder>(){
+ class RetroCryptoAdapter(val context: Context) : RecyclerView.Adapter<RetroCryptoAdapter.RetroCryptoHolder>(){
 
-inner class  RetroCryptoHolder(val binding: CryptoItemsBinding) : RecyclerView.ViewHolder(binding.root) {
+inner class  RetroCryptoHolder(val binding: CryptoItemsBinding) : RecyclerView.ViewHolder(binding.root)
 
-
-}
 
     private val diffCallback = object : DiffUtil.ItemCallback<CryptoListItem>() {
         override fun areItemsTheSame(oldItem: CryptoListItem, newItem: CryptoListItem): Boolean {
             return oldItem.id == newItem.id
+
         }
 
         override fun areContentsTheSame(oldItem: CryptoListItem, newItem: CryptoListItem): Boolean {
             return oldItem == newItem
         }
+        fun getCurrentList() {}
     }
+
+
+
+
+
+
     private val differ = AsyncListDiffer(this, diffCallback)
+
     var cryptos: List<CryptoListItem>
         get() = differ.currentList
-        set(value) { differ.submitList(value) }
+        set(value) { differ.submitList(value)
+        }
+
+
+
+
+
 
 
 
@@ -63,9 +75,18 @@ inner class  RetroCryptoHolder(val binding: CryptoItemsBinding) : RecyclerView.V
                 rank.text = "Rank:" + crypto.rank
                 name.text = crypto.name
                 symbol.text = crypto.symbol
+                price.text = crypto.price.toBigDecimal().setScale(4, RoundingMode.UP).toString()
+                var dayChange = crypto.day.price_change_pct.toDouble()
+                dayChange *= 100
+                day.text = dayChange.toBigDecimal().setScale(2, RoundingMode.UP).toString()
 
+            var weekChange = crypto.week.price_change_pct.toDouble()
+            weekChange *= 100
+            week.text = weekChange.toBigDecimal().setScale(2, RoundingMode.UP).toString()
 
-
+            var monthChange = crypto.month.price_change_pct.toDouble()
+            monthChange *= 100
+            month.text = monthChange.toBigDecimal().setScale(2, RoundingMode.UP).toString()
 
         }
     }

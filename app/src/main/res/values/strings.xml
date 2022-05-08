@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ApiApp</string>
+    <string name="retro_app_name">RetroCryptoApp</string>
 </resources>

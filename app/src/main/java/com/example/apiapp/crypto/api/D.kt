@@ -9,3 +9,4 @@ data class D(
     val volume_change: String,
     val volume_change_pct: String
 )
+
