@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/EGYETEM/API_APP/app/src/main/res/drawable/ic_btc.xml" value="0.22291666666666668" />
         <entry key="..\:/EGYETEM/API_APP/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/EGYETEM/API_APP/app/src/main/res/layout/activity_retro_crypto.xml" value="0.33" />
-        <entry key="..\:/EGYETEM/API_APP/app/src/main/res/layout/crypto_items.xml" value="0.33" />
+        <entry key="..\:/EGYETEM/API_APP/app/src/main/res/layout/crypto_items.xml" value="0.5" />
         <entry key="..\:/EGYETEM/API_APP/app/src/main/res/layout/crypto_main.xml" value="0.1" />
+        <entry key="..\:/EGYETEM/API_APP/app/src/main/res/layout/save.xml" value="0.20677083333333332" />
+        <entry key="..\:/EGYETEM/API_APP/app/src/main/res/layout/save2.xml" value="0.20677083333333332" />
+        <entry key="..\:/EGYETEM/API_APP/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.22291666666666668" />
       </map>
     </option>
   </component>

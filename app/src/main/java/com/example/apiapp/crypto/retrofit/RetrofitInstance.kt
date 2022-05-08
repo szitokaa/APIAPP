@@ -5,12 +5,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
 
-    val api: RetroCryptoApi by lazy{
+    val api: RetroCryptoApi by lazy {
         Retrofit.Builder()
             .baseUrl("https://api.nomics.com/v1/currencies/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(RetroCryptoApi::class.java)
-        
+
     }
 }

@@ -1,20 +1,17 @@
 package com.example.apiapp.crypto.retrofit
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-
 import com.example.apiapp.databinding.ActivityRetroCryptoBinding
 import kotlinx.android.synthetic.main.crypto_items.*
-import retrofit2.Call
-import retrofit2.Callback
 import retrofit2.HttpException
-import retrofit2.Response
 import java.io.IOException
+
 const val TAG = "RetroCryptoActivity"
 
 class RetroCryptoActivity : AppCompatActivity() {
@@ -34,7 +31,7 @@ class RetroCryptoActivity : AppCompatActivity() {
             binding.progressBar.isVisible = true
             val response = try {
                 RetrofitInstance.api.getCryptos()
-            } catch(e: IOException) {
+            } catch (e: IOException) {
                 binding.error.isVisible = true
                 Log.e(TAG, "IOException, you might not have internet connection")
                 binding.error.text = "ERROR\nIOException, you might not have internet connection"
@@ -45,7 +42,7 @@ class RetroCryptoActivity : AppCompatActivity() {
                 binding.progressBar.isVisible = false
                 return@launchWhenCreated
             }
-            if(response.isSuccessful && response.body() != null) {
+            if (response.isSuccessful && response.body() != null) {
                 retroCryptoAdapter.cryptos = response.body()!!
             } else {
                 Log.e(TAG, "Response not successful")
@@ -53,7 +50,6 @@ class RetroCryptoActivity : AppCompatActivity() {
             }
             binding.progressBar.isVisible = false
         }
-
 
 
     }
