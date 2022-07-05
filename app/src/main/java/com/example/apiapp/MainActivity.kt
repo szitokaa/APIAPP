@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        udvozlo.text = "Az alkalmazás célja az API használatának bemutatása."
+        udvozlo.text = ""
         udvozlo2.text = "Kattintson a BITCOIN Logójára, ha szeretné látni a kriptovaluták aktuális árfolyamát!"
 
         toRetroCryptoButton.setOnClickListener({

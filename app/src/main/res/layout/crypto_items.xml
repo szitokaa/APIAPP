@@ -50,15 +50,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginBottom="0dp"
                         android:text="|" />
 
                     <TextView
                         android:id="@+id/symbol"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="0dp"
                         android:layout_marginBottom="8dp"
                         android:text="SYMBOL"
                         android:textStyle="bold"/>
@@ -85,7 +85,7 @@
 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="16dp"
+                        android:layout_marginEnd="4dp"
                         android:layout_marginBottom="8dp"
                         android:text="$"
                         android:textStyle="bold"/>
@@ -138,6 +138,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/section_price"
                     android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="34dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -148,13 +149,7 @@
                         android:text="Hó:" />
 
 
-                    <TextView
-                        android:id="@+id/month"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginBottom="8dp"
-                        android:text="" />
+
 
                 </LinearLayout>
 
@@ -165,7 +160,16 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginBottom="12dp"
                     android:text="Rank"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginTop="40dp"
+                    android:text="" />
 
 
             </RelativeLayout>
